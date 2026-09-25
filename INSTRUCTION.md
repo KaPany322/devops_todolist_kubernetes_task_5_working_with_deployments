@@ -31,6 +31,7 @@ memory: "128Mi"
 cpu: '500m'
 
 This will provide enough resources to run the app and if it will consume to many(500m or 128Mi) the pods going to be killed with OutOfMemory
+Deployment also uses the RollingUpdate type of how the replicas should update, so maxUnavailable: 1 and maxSurge: 1 means that its only can be 1 pod unavailable and 1 pod updated. This method will provide continuous connect to app 
 
 To provide autoscaling when resources not enough, so they are on 70% and more to limits hpa going to create up to 5 replicas what is enough to app to work correctly
 
